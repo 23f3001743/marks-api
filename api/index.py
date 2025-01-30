@@ -13,13 +13,13 @@ class handler(BaseHTTPRequestHandler):
         query_components = parse_qs(self.path.split('?')[1]) if '?' in self.path else {}
         names = query_components.get('name', [])
         
-        # Define the correct marks for each student
+        # Updated marks_data with the correct values
         marks_data = {
-            "X": 23,
-            "Y": 19,
-            "Z": 21,
-            "W": 28,
-            "V": 79
+            "A": 21,
+            "B": 79,
+            "C": 61,
+            "D": 87,
+            "E": 24
         }
         
         # Get marks for requested names
@@ -27,4 +27,5 @@ class handler(BaseHTTPRequestHandler):
         
         response = {"marks": marks}
         self.wfile.write(json.dumps(response).encode('utf-8'))
+
 
