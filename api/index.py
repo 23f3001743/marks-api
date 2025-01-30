@@ -13,13 +13,13 @@ class handler(BaseHTTPRequestHandler):
         query_components = parse_qs(self.path.split('?')[1]) if '?' in self.path else {}
         names = query_components.get('name', [])
         
-        # Updated marks_data with the correct values
+        # Updated marks_data with the new correct values
         marks_data = {
             "A": 21,
-            "B": 79,
-            "C": 61,
-            "D": 87,
-            "E": 24
+            "B": 10,
+            "C": 69,
+            "D": 57,
+            "E": 68
         }
         
         # Get marks for requested names
